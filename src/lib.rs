@@ -1114,4 +1114,18 @@ mod tests {
 
         Ok(())
     }
+
+    #[test]
+    fn test_control_characters() -> Result<(), std::fmt::Error> {
+        // all ascii characters 0x00 <= c < 0x20 must be escaped
+        // see https://www.json.org/json-en.html
+
+        for c in 0x00u8..0x20u8 {
+            let c = char::from(c);
+            let json = to_json_string(c.to_string().as_str());
+            assert!(&json[0..2] == "\"\\");
+        }
+
+        Ok(())
+    }
 }
