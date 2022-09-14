@@ -447,7 +447,7 @@ impl JSONWriterValue for &String {
 
 ///
 /// Serializes as a JSON number.
-/// 
+///
 /// If value is finite then value is converted to string and appended to buffer.
 /// If value is NaN or infinity, then the string "null" is appended to buffer (without the quotes).
 ///
@@ -460,7 +460,7 @@ impl JSONWriterValue for f64 {
 
 ///
 /// Serializes as a JSON number.
-/// 
+///
 /// If value is finite then value is converted to string and appended to buffer.
 /// If value is NaN or infinity, then the string "null" is appended to buffer (without the quotes).
 ///
